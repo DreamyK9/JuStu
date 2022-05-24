@@ -1,0 +1,10 @@
+26 Buchstaben + 3 Umlaute + ß => 30
+10 Ziffern
+Satzzeichen !?.,:;"°´^`
+Einheitszeichen %$§€
+Mathematische Operatoren =+-*/²³
+Klammern () [] {} <>
+Sonstige Sonderzeichen _\#@
+
+30 + 10 + 11 + 4 + 7 + 8 + 4
+= 74

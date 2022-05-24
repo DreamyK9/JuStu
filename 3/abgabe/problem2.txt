@@ -1,0 +1,4 @@
+Das Problem, das ich mit Aufgabe 2 hatte, war, dass das das Program zweimal durch stdin gehen muss.
+Das erste mal um die längste Zeile zu identifizieren
+und das zweite mal um die Längste Zeile auszugeben.
+Um dieses Problem zu bewältigen, habe ich die rewind()-Funktion auf stdin angewendet.

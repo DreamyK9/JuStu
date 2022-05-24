@@ -1,0 +1,24 @@
+
+Text Axis Swap - Logic
+--------------
+<Action> <Item> <line>:<character>
+
+char() {
+Get Char 1:1
+Put Char 1:1
+
+Get Char 2:1
+Put Char 1:2
+
+Get Char 3:1
+Put Char 1:3
+
+Get Char a:b
+Put Char b:a
+
+... (a++)
+Stop at EOF
+}
+
+b++
+Repeat char() untill all characters were parsed

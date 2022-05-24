@@ -1,0 +1,46 @@
+
+Diese Funktion nimmt als Argument eine Komma-Zahl (double)
+ein und liest am Anfang eine Zeichenfolge von der Konsole ein,
+wobei es sich um eine Folge von Ziffern handeln sollte.
+Diese werden dann von der Funktion hinten an die Ziffern
+des Arguments gehängt. Die resultierende Zahl wird ausgegeben.
+Ist das Argument eine Komma-Zahl, so verschmelzen die Nachkomma-
+stellen mit den jeweiligen Ziffern (Addition).
+
+Beispiel:
+  fnord(15.3)
+  Eingabe: 6438345
+  Ausgabe: 159438345
+
+Das gilt allerdings nur für den ersten Aufruf der Funktion.
+Jedes weitere Mal, das die Funktion aufgerufen wird, wird kein
+Wert von der Konsole eingelesen und das Argument ohne
+Veränderung wieder ausgegeben, egal, ob der beim ersten Mal
+von der Konsole eingelesene Wert eine Ziffer war oder nicht.
+
+Die Funktion liest dabei zuallererst ein Zeichen von der
+Standardeingabe ein. Ist dieses Zeichen eine Ziffer, ruft sich die 
+Funktion rekursiv mit (v*10 + (c - '0')) als Argument auf, wobei v 
+das Argument und c das aktuell eingelesene Zeichen darstellt. In 
+dieser wird dann das nächste Zeichen eingelesen und das ganze Spiel 
+wiederholt sich solange, bis ein Zeichen eingelesen wird, bei dem es 
+sich um keine Ziffer handelt, daraufhin wird die Rekursion abgebaut 
+und der Wert wird letztendlich ausgegeben.
+
+Beispiel:
+  fnord(7.5)
+  Eingabe: 63734d4
+  Rechnung: (((((7.5*10 + 6)*10 + 3)*10 +7)*10 + 3)*10 + 4)
+  Ausgabe: 813734
+
+Dass ein ungültiges Zeichen eingelesen wird, kann zwei Ursachen haben:
+1. Das Ende der Nutzer-Eingabe ist erreicht.
+2. Es wurde ein ungültiges Zeichen eingegeben.
+
+In beiden Fälle wird die Berechnung beendet und das ungültige letzte 
+Zeichen wird mit ungetc() in die Standardeingabe "zurückgelegt", was 
+dafür sorgt, dass es beim nächsten Aufruf von getchar() erneut
+eingelesen wird, noch bevor eine Nutzereingabe abgefragt wird, was
+darin resultiert, dass alle weiteren Aufrufe der Funktion fnord()
+dieses Fehlerhafte Zeichen einlesen, es wieder "zurücklegen" und das
+Argument unverändert ausgeben.

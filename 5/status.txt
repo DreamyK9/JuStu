@@ -1,0 +1,14 @@
+In jeder Konsole gibt es eine Variable, die den Error Code
+des zuletzt ausgeführten Programms enthält.
+Dieser variiert je nach Konsole. 
+In der CMD-Shell von Windows ist es "echo %errorLevel%".
+In Windows PowerShell ist es "$LASTEXITCODE".
+In Bash-Konsolen ist es "echo $?".
+
+Alle 3 Varianten haben gemeinsam, dass es eine eingebaute Variable gibt, die den Exit Code des zuletzt ausgeführten Programms speichert.
+
+Mit diesem Wissen lässt sich auch ein kleines Batch-Script schreiben, das ein Program ausführt und seinen Exit-Code ausgibt. (status.bat)
+(Ich habe mir nur dafür mal eben die Batch Basics beigebracht lol)
+
+Es funktioniert leider auch nicht richtig. Vielleicht wird die Environment-Variable %errorLevel% 
+erst nach dem Ausführen des ganzen Skripts aktualisiert.

@@ -1,0 +1,18 @@
+Funktion 1 haben wir in zwei aufgeteilt:
+Die erste speichert die Länge des Inputs.
+Die zweite liest den Input ein und speichert ihn in einem Array.
+
+In Funktion 2 haben wir uns dazu entschieden die Zählwerte für die einzelnen
+Zeichen nach ihrem ANSI-Code abzuspeichern. Damit ließ sich eine Menge Zeit sparen,
+da nicht jeder Fall einzeln berücksichtigt werden musste. Zusätzlich speichert Funktion 2
+noch die Anzahl aller Buchstaben für die Berechnungen in Funktion 3.
+
+In Funktion 3 wird dann die jeweilige relative Häufigkeit der einzelnen Buchstaben berechnet,
+indem ihre absolute Häufigkeit durch die Anzahl aller Buchstaben geteilt wird.
+
+Als letztes werden dann schließlich in der main()-Funktion die End-Werte ausgegeben.
+Dabei werden nur vorhandene Buchstaben berücksichtigt. Die anderen werden weggelassen.
+
+Mit dem zurückgeben eines Arrays aus einer Funktion hatten wir einige Schwierigkeiten. 
+Dieses Problem haben wir gelöst, indem wir einen Pointer zum Array in die Funktionen 
+eingegeben und das Array in der Funktion lediglich mutiert haben.
