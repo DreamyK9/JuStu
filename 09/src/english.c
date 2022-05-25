@@ -66,7 +66,7 @@ Optional Arguments:\n\
     {
         if (data.error_level)
             break;
-        
+
         if (argv[i][0] == '-')
         {
             if (value_demanded)
@@ -158,7 +158,7 @@ struct matrix_wrapper fetch_matrix(FILE *input_file)
         if (c >= 'a' && c <= 'z')
             current = c - 'a';
         else
-        if (c == ' ' || c == '\t' || c == '\n') 
+        if (c == ' ' || c == '\t' || c == '\n')
         {
             if (prev == 30)
                 continue;
@@ -184,7 +184,7 @@ struct matrix_wrapper fetch_matrix(FILE *input_file)
             }
         data.content[bef_prev][prev][current]++;
         data.content[bef_prev][prev][CHARS]++;
-        
+
         bef_prev = prev;
         prev = current;
     }
@@ -233,7 +233,7 @@ int generate_char(double prob[31])
 {
     int r;
     long progress = 0;
-        
+
     if (prob[31] == 0)
         return -1;
 
@@ -271,7 +271,7 @@ void generate_text(int len, double (*matrix)[CHARS][CHARS+1], FILE* output_file)
 
 
 int main(int argc, char *argv[])
-{   
+{
     struct args args = parse_args(argc, argv);
     if (args.error_level)
         return args.error_level;
