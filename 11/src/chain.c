@@ -14,7 +14,7 @@ typedef struct dynamic_list {
 
 dlist_t *dl_init()
 {
-
+    
 }
 
 int dl_add(dlist_t *list, char value)

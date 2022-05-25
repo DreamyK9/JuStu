@@ -3,7 +3,6 @@
 int main() {
 	// Goes through stdin till EOF is reached
 	for (char c=getchar(); c != EOF; c=getchar()) {
-		
 		// if c is a tab or space
 		if (c == '	' || c == ' ') {
 			// output space
