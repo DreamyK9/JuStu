@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "stdlib.h": "c",
+        "stdio.h": "c",
+        "dyn_list.h": "c",
+        "dynlist_str.h": "c"
+    }
+}
