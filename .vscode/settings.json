@@ -3,6 +3,9 @@
         "stdlib.h": "c",
         "stdio.h": "c",
         "dyn_list.h": "c",
-        "dynlist_str.h": "c"
+        "dynlist_str.h": "c",
+        "math.h": "c",
+        "corecrt_math_defines.h": "c",
+        "corecrt_math.h": "c"
     }
 }

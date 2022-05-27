@@ -1,0 +1,18 @@
+I rushed through the first 2 tasks with ease, as I hadn't been new
+to programming at all and had already written some scripts using JavaScript and Python for a few years.
+Though for the second I of course had to research the ANSI standard, but you know, what they say: Your most
+important skill as a programmer is to use google (or DuckDuckGo in my case).
+
+The third task took me some time to be honest, but after looking up how to algorithmically
+convert base 10 to binary values, it wasn't that big of a deal.
+
+Identifying the biggest of some numbers was a breeze, even without if-statements and ternary operators.
+There's always the good ol' switch statement. Not an ideal use case for it, but gets the job done.
+Though it probably was supposed to be solved different. I'm not sure..., but I'll tell you as soon as I found out.
+
+The fith task on the other hand was my nemesis. First of all it was requiring a much more complex algorithm
+than any of the tasks before, which btw was the lesser of the two evils.
+Because second of all I had never seen a series expansion in my life and no idea how to interpret it.
+I've been only 9th grade after all.
+Even upon researching it for about an hour I had no idea what was asked of me. So I reached out to a friend,
+who also participated in the "Juniorstudium" and together we figured it out, or actually he rather explained it to me.
