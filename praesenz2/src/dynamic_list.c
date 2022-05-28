@@ -41,10 +41,11 @@ int dl_add(dlist_t *list, int value)
             return 1;
         key = key->next;
         key->next = NULL;
-        key->used = true;
     }
 
     key->value = value;
+    key->used = true;
+
     list->len++;
     return 0;
 }
@@ -123,28 +124,30 @@ int dl_insert(dlist_t *list, int index, int value)
         return 1;
     }
 
-    // get key before index
-    key_t *key = list->data;
-    for (int i = 0; i < index-1; i++)
-        key = key->next;
-
-    // save pointer to beginning of rest of the list
-    key_t *tmp = key->next;
-
-    // insert new key
-    key->next = (key_t *) malloc(sizeof(key_t));
-    if (key->next == NULL)
+    // generate new key and add value to it
+    key_t *new_key = (key_t *) malloc(sizeof(key_t));
+    if (new_key == NULL)
         return 1;
+    new_key->value = value;
+    new_key->used = true;
 
-    // if index is 0, update list->data
     if (index == 0)
-        list->data = key;
+    {
+        // insert at beginning
+        new_key->next = list->data;
+        list->data = new_key;
+    }
+    else
+    {
+        // get key before index
+        key_t *prev = list->data;
+        for (int i = 0; i < index-1; i++)
+            prev = prev->next;
 
-    // initialize inserted key
-    key = key->next;
-    key->next = tmp;
-    key->used = true;
-    key->value = value;
+        // insert at index
+        new_key->next = prev->next;
+        prev->next = new_key;
+    }
 
     // update length
     list->len++;
@@ -154,71 +157,40 @@ int dl_insert(dlist_t *list, int index, int value)
 
 int dl_delete(dlist_t *list, int index)
 {
-    
-}
-
-int dl_insert_lenn(dlist_t *list, int index, int value)
-{
     // handle "index out of range" exceptions
     if (index > list->len || index < 0)
     {
         printf("[ERROR] Index out of range!\n");
-        return 0;
+        return 1;
     }
 
-    if(index==0)
+    key_t *old;
+
+    // delete key
+    if (index == 0)
     {
-        key_t *tmpnext=list->data;
-        list->data = (key_t *) malloc(sizeof(key_t));
-        key_t *key=list->data;
-        key->value=value;
-        key->next=tmpnext;
+        // delete at beginning
+        old = list->data;
+        list->data = list->data->next;
     }
     else
     {
-        key_t *key = list->data;
-        // find element before index
+        // get key before index
+        key_t *prev = list->data;
         for (int i = 0; i < index-1; i++)
-            key = key->next;
+            prev = prev->next;
 
-        key_t *tmpnext=key->next;
-        key->next = (key_t *) malloc(sizeof(key_t));
-        key=key->next;
-        key->value=value;
-        key->next=tmpnext;
-    }
-    list->len++;
-}
+        old = prev->next;
 
-int dl_delete_lenn(dlist_t *list, int index)
-{
-    // handle "index out of range" exceptions
-    if (index > list->len || index < 0)
-    {
-        printf("[ERROR] Index out of range!\n");
-        return 0;
+        // delete at index
+        prev->next = old->next;
     }
 
-    if(index==0)
-    {
-        key_t *key=list->data;
-        key_t *tmp=list->data->next;
-        key->next = key->next->next;
-        key->value=tmp->value;
-        free(tmp);
-    }
-    else
-    {
-        key_t *key = list->data;
-        // find key before index
-        for (int i = 0; i < index-1; i++)
-            key = key->next;
-        key_t *tmp=key->next;
-        key->next = key->next->next;
-        free(tmp);
-    }
-
+    // update length
     list->len--;
+
+    free(old);
+    return 0;
 }
 
 

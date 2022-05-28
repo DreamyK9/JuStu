@@ -57,6 +57,25 @@ void dl_free(dlist_t *list);
 int dl_swap(dlist_t *list, int index1, int index2);
 
 /**
+ * @brief insert a value at a given index
+ *
+ * @param list list to insert into
+ * @param index index to insert at
+ * @param value value to insert
+ * @return int - error code
+ */
+int dl_insert(dlist_t *list, int index, int value);
+
+/**
+ * @brief delete value at a given index
+ *
+ * @param list list to delete from
+ * @param index indext to delete at
+ * @return int - error code
+ */
+int dl_delete(dlist_t *list, int index);
+
+/**
  * @brief print all elements of a list
  *
  * @param list list to print elements of
