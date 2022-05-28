@@ -1,0 +1,5 @@
+This folder contains code from a gist created by the user sradevel.
+I used this to research dynamic lists in c and my own list is inspired by his.
+
+The gist can be found under:
+https://gist.github.com/sradevel/1e2a1054969e60ad25d9bafe526c1b05
