@@ -10,7 +10,6 @@
 typedef struct list_key {
     struct list_key *next; // next element
     int value; // value
-    bool used; // whether a value is currently stored
 } key_t;
 
 /**
