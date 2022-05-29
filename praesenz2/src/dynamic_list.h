@@ -3,12 +3,20 @@
 #ifndef _DYNAMIC_LIST_H
 #define _DYNAMIC_LIST_H
 
+/**
+ * @brief interface for a dynamic list
+ * 
+ */
 typedef struct list_key {
     struct list_key *next; // next element
     int value; // value
     bool used; // whether a value is currently stored
 } key_t;
 
+/**
+ * @brief keys representing the chain elements
+ *  inside a dynamic list
+ */
 typedef struct dynamic_list {
     int len;
     struct list_key *data;

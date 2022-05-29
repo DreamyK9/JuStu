@@ -45,5 +45,4 @@ int main()
     printf("Back to original: ");
     dl_print(list, ", ");
     putchar('\n');
-
 }

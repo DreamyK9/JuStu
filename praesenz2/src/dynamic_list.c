@@ -43,6 +43,7 @@ int dl_add(dlist_t *list, int value)
         key->next = NULL;
     }
 
+    // add value to last key
     key->value = value;
     key->used = true;
 
