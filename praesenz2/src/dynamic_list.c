@@ -6,14 +6,22 @@
 
 dlist_t *dl_create()
 {
-    // allocate new list
+    // allocate and initialize new list
     dlist_t *list = (dlist_t *) malloc(sizeof(dlist_t));
     if (list == NULL)
         return NULL;
-
-    //initialize new list
     list->len = 0;
-    list->data = NULL;
+
+    // allocate and initialize first list key
+    list->data = (key_t *) malloc(sizeof(key_t));
+    if (list->data == NULL)
+    {
+        free(list);
+        return NULL;
+    }
+    list->data->next = NULL;
+    list->data->value = 0;
+    list->data->used = false;
 
     return list;
 }
@@ -25,19 +33,20 @@ int dl_add(dlist_t *list, int value)
     while (key->next)
         key = key->next;
 
-    // add new key at end of the chain
-    key->next = (key_t *) malloc(sizeof(key_t));
-    if (key->next == NULL)
-        return 1;
-    key = key->next;
-    key->next = NULL;
+    // add new key at end of the chain if last key's value isn't empty
+    if (key->used)
+    {
+        key->next = (key_t *) malloc(sizeof(key_t));
+        if (key->next == NULL)
+            return 1;
+        key = key->next;
+        key->next = NULL;
+    }
 
-    // add value to new key
     key->value = value;
+    key->used = true;
 
-    // update length
     list->len++;
-
     return 0;
 }
 
@@ -120,6 +129,7 @@ int dl_insert(dlist_t *list, int index, int value)
     if (new_key == NULL)
         return 1;
     new_key->value = value;
+    new_key->used = true;
 
     if (index == 0)
     {

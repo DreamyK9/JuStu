@@ -5,16 +5,17 @@
 
 /**
  * @brief interface for a dynamic list
- * 
+ *
  */
 typedef struct list_key {
     struct list_key *next; // next element
     int value; // value
+    bool used; // whether a value is currently stored
 } key_t;
 
 /**
- * @brief keys representing the chain elements
- *  inside a dynamic list
+ * @brief keys representing chain elements in a list
+ *
  */
 typedef struct dynamic_list {
     int len;
