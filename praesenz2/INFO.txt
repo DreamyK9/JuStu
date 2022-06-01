@@ -6,11 +6,11 @@ und den Datentypen von string (char*) auf int geändert.
 Die erste Funktion "dl_swap" wurde von Jonas geschrieben.
 Sie vertauscht zwei Elemente einer Liste mithilfe einer Platzhalter-Variable.
 
-Die zweite Liste "dl_insert" wurde von Lennart geschrieben.
+Die zweite Funktion "dl_insert" wurde von Lennart geschrieben.
 Sie fügt ein Element in eine Liste ein. Dabei wird die Liste neu verkettet.
 Das vorherige Element zeigt dann auf das neue Element und das neue Element auf
 das nächste.
 
 Die dritte Funktion "dl_delete" wurde von Max geschrieben.
 Sie entfernt ein Element aus einer Liste. Dafür wird die Liste neu verkettet.
-Das Element vor dem Entfernten zeigt dann auf das Element nach dem Entfernten.
+Das Element vor dem entfernten zeigt dann auf das Element nach dem entfernten.
