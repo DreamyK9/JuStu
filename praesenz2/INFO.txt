@@ -14,3 +14,5 @@ das nächste.
 Die dritte Funktion "dl_delete" wurde von Max geschrieben.
 Sie entfernt ein Element aus einer Liste. Dafür wird die Liste neu verkettet.
 Das Element vor dem entfernten zeigt dann auf das Element nach dem entfernten.
+
+Wir haben alle 3 Funkionen zusammen noch einmal überarbeitet und getestet.
